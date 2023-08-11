@@ -1,6 +1,48 @@
+# ??? ??? ?? ??
 server:
   port: 8081
+  servlet:
+    encoding:
+      force: true
 
+# Spring Devtools ??? H2 ? ?? ??? ??
 spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  h2:
+    console:
+      enabled: true
+
+
+  # Thymeleaf ??
   thymeleaf:
-    prefix: classpath:/templates/html/
+    cache: false
+    prefix: classpath:templates/ # ??? ???? ?? ??? ?. ???
+    check-template-location: true
+    suffix: .html
+    mode: HTML
+
+
+  # Hibernate ??
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+      org:
+        hibernate:
+          SQL: DEBUG
+          type:
+            descriptor:
+              sql:
+                BasicBinder: TRACE
+    defer-datasource-initialization: true
+
+  # ?????? ??
+  datasource:
+    generate-unique-name: false
+    url: jdbc:h2:mem:testdb
