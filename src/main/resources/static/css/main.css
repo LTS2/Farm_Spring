@@ -1,0 +1,394 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* 왼쪽 버튼 */
+
+.btn-container {
+	width: 100px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.left-btns {
+	height: 50px;
+	background-color: #fff;
+	border: 1px solid #000;
+	cursor: pointer;
+}
+
+.left-btns:hover {
+	border-color: #000;
+	background-color: #fff;
+	box-shadow: 0 0 5px #000;
+	cursor: pointer;
+}
+
+/* 내 정보창 */
+.level-container,
+.stats,
+.strong,
+.dexterity,
+.playtime,
+.equipment {
+	display: flex;
+	gap: 5px;
+}
+
+.my-info {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+
+/* 퀘스트 창 */
+/* .middle-container {
+  display: flex;
+  float: right;
+} */
+
+.middle-container {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.quest-window {
+	text-align: center;
+	line-height: 30px;
+}
+
+.quest-package {
+	display: flex;
+	float: right;
+}
+
+.tradetype_area {
+	visibility: hidden;
+	opacity: 0;
+	position: fixed;
+	width: 90%;
+	height: auto;
+	overflow: auto;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	background: #fff;
+	padding: 10px 15px;
+	box-shadow: 0px 0px 0px 100vh rgba(0, 0, 0, 0.7);
+}
+
+/* 모달 창 */
+
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	display: none;
+
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.btn-close-popup {
+	height: 30px;
+	width: 50px;
+	background-color: #fff;
+	border: 1px solid #000;
+	cursor: pointer;
+}
+
+/* @media (min-width: 1710px) and (max-width: 1920px) {
+  .btn-close-popup {
+    position: absolute;
+    top: 110px;
+    right: 390px;
+    z-index: 999;
+    height: 30px;
+    width: 50px;
+    background-color: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+} */
+
+.btn-close-popup:hover {
+	border-color: #000;
+	background-color: #fff;
+	box-shadow: 0 0 5px #000;
+	cursor: pointer;
+}
+
+.modal_body {
+	border: 2px solid #000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1000px;
+	height: 600px;
+	padding: 100px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.modal_text_container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.modal_buy_container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal_body_buy {
+	border: 2px solid #000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 100px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	transform: translateX(-50%) translateY(-50%);
+}
+.buy_btn_close_popup {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.check_text {
+	text-align: center;
+	font-size: 3em;
+	position: relative;
+	bottom: 60px;
+}
+
+.check_text2 {
+	padding: 30px;
+	position: relative;
+	bottom: 20px;
+	text-align: center;
+	font-size: 1.6em;
+}
+
+/* 구매창 네 아니요 버튼 */
+.check_text3 {
+	text-align: center;
+
+	position: relative;
+	top: 30px;
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+
+.check_yes,
+.check_no {
+	border: 1px solid black;
+	background-color: #fff;
+	border-radius: 5px;
+	width: 150px;
+	height: 40px;
+}
+
+.check_yes:hover,
+.check_no:hover {
+	border-color: #000;
+	box-shadow: 0 0 5px #000;
+	cursor: pointer;
+}
+
+.modal_final_check_container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal_final_check {
+	text-align: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	font-size: 2em;
+	border: 2px solid #000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 70px;
+	background-color: #fff;
+	border-radius: 10px;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.modal_final_success {
+	display: flex;
+	width: 330px;
+	display: none;
+}
+
+/* 확인 버튼 */
+.final_check {
+	width: 100px;
+	height: 50px;
+	background-color: #fff;
+	border: 1px solid #000;
+}
+
+.final_check:hover {
+	border-color: #000;
+	background-color: #fff;
+	box-shadow: 0 0 5px #000;
+	cursor: pointer;
+}
+
+.modal_text {
+	font-size: 3em;
+	position: relative;
+	bottom: 80px;
+}
+
+.modal_close {
+	position: relative;
+	bottom: 80px;
+}
+
+.modal_text2 {
+	display: flex;
+	justify-content: space-between;
+}
+
+.modal_money {
+	font-size: 2em;
+}
+
+.modal_category {
+	display: flex;
+}
+
+.store_category {
+	border-bottom: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: #fff;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	width: 70px;
+	cursor: pointer;
+}
+
+.store_category:hover {
+	border-color: #000;
+	box-shadow: 0 0 5px #000;
+	cursor: pointer;
+}
+
+.store_tool {
+	background-color: black;
+	color: white;
+}
+.modal_money {
+	margin-top: 10px;
+}
+
+.modal_list {
+	overflow: auto;
+	height: 540px;
+	border: 1px solid #000;
+}
+
+.modal_list_container {
+	display: flex;
+	border: 1px solid #000;
+	margin-top: 10px;
+	margin-left: 5px;
+	justify-content: space-between;
+}
+
+/* item_img_box */
+.item_img_box {
+	display: flex;
+}
+
+.item_img_box img {
+	width: 100%;
+}
+
+.store_items {
+	min-width: 200px;
+}
+
+/* img태그의 도구 클래스 */
+.store_items {
+	padding-right: 20px;
+}
+
+/* item_button_container */
+.item_button_container {
+	display: flex;
+	gap: 10px;
+	margin-top: 100px;
+}
+
+.buy,
+.sell {
+	border: 1px solid #000;
+	background-color: #fff;
+	border-radius: 6px;
+	width: 100px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.buy:hover,
+.sell:hover {
+	border-color: #000;
+	background-color: #fff;
+	box-shadow: 0 0 5px #000;
+	cursor: pointer;
+}
+
+.holding-quantity {
+	position: relative;
+	width: 80px;
+	right: 30px;
+	top: 5px;
+}
+
+/* item_text_container */
+.item_text_container {
+	/* display: flex; */
+	/* max-width: 150px; */
+	width: 460px;
+	padding: 20px;
+	line-height: 30px;
+	border-left: 1px solid #000;
+	margin-right: 200px;
+}
+
+.stats_container {
+	display: flex;
+}

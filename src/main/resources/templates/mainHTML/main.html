@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/default_layout}">
+
+
+
+<body layout:fragment="content">
+<div class="container">
+	<!-- 왼쪽 버튼 시작 -->
+	<div class="btn-container">
+		<div class="modal">
+
+			<div class="modal_body">
+				<div class="modal_text_container">
+					<div class="modal_text">도구 상점</div>
+					<div class="modal_close">
+						<button class="btn-close-popup">닫기</button>
+					</div>
+				</div>
+				<div class="modal_text2">
+					<div class="modal_money">
+						소지한 돈 :
+						<!--/*[[${dfMoney}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+					</div>
+					<div class="modal_category">
+						<button class="store_category store_tool">도구</button>
+						<button class="store_category store_consumables">소모품</button>
+						<button class="store_category store_consumables">소모품</button>
+						<button class="store_category store_consumables">소모품</button>
+						<button class="store_category store_consumables">소모품</button>
+						<button class="store_category store_etc">기타</button>
+					</div>
+				</div>
+				<div class="modal_list">
+					<!--/*<div th:each="idtod : ${idtoList}">*/--> <!-- Thymeleaf 표현식 주석 -->
+					<div class="modal_list_container">
+						<div class="item_img_box">
+							<!--/*<img th:src="@{../img/__${idtod.item_img}__}" th:alt="__${idtod.item_name}__"
+								 class="store_items">*/--> <!-- Thymeleaf 표현식 주석 -->
+						</div>
+
+						<div class="item_text_container">
+							<div class="item_name">
+								이름 :
+								<!--/*[[${idtod.item_name}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+							</div>
+							<div class="item_text">
+								설명 :
+								<!--/*[[${idtod.item_text}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+							</div>
+							<div class="item_price">
+								가격 :
+								<!--/*[[${#numbers.formatDecimal(idtod.item_price)}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+							</div>
+							<div class="stats_container">
+								<div class="item_str">
+									힘+
+									<!--/*[[${idtod.item_str}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+									&nbsp;
+								</div>
+								<div class="item_dex">
+									민첩+
+									<!--/*[[${idtod.item_dex}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+								</div>
+							</div>
+							<div class="item_button_container">
+								<!--/*<div class="btns buy-btn">
+								  <button class="buy buy_btn_open_popup"
+										  th:data-item="__${idtod.item_name}__">구매하기</button>
+								</div>*/--> <!-- Thymeleaf 표현식 주석 -->
+								<div class="btns sell-btn">
+									<button class="sell">팔기</button>
+								</div>
+							</div>
+						</div>
+						<div class="holding-quantity">
+							<div class="quantity-text">0개 보유중</div>
+						</div>
+					</div>
+					<!--/* 정말 구매할 것인지 확인창 */
+					<div class="modal_buy_container">
+					  <div class="modal_body_buy">
+						<div class="buy_btn_close_popup">취소</div>
+						<div class="check_text">알림</div>
+						<div class="check_text2">
+						  <!--/*[[${idtod.item_name}]]를 구매하시겠습니까?<br>*/--> <!-- Thymeleaf 표현식 주석 -->
+					<br>
+					구매 후 남는 금액 :
+					<!--/*[[${udto.money}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+				</div>
+				<div class="check_text3">
+					<button class="check_yes">네</button>
+					<button class="check_no">아니요</button>
+				</div>
+			</div>
+		</div>
+		<!--/* 구매 마지막 확인창 */
+		<div class="modal_final_check_container">
+		  <div class="modal_final_check">
+			<div class="modal_final_success">성공 or 실패</div>
+			<button class="final_check">확인</button>
+		  </div>
+		</div>
+	  <!--/* 아래 div modal_list 끝 */*/--> <!-- Thymeleaf 표현식 주석 -->
+	</div>
+	<!-- 아래 div modal_body 끝-->
+</div>
+
+</div>
+
+<button class="left-btns btn-open-popup" id="store">상점</button>
+
+<button class="left-btns" id="bag">가방</button>
+<!-- <div class="bag_btn"> <div class="modal_body">가방</div> </div> -->
+<button class="left-btns" id="chest">창고</button>
+<!-- <div class="chect_btn"> <div class="modal_body">창고</div> </div> -->
+<button class="left-btns" id="farm">농장</button>
+<!-- <div class="farm_btn"> <div class="modal_body">농장</div> </div> -->
+<button class="left-btns" id="map">지도</button>
+<!-- <div class="map_btn"> <div class="modal_body">지도</div> </div> -->
+</div>
+<!-- 위의 div 왼쪽 버튼 끝-->
+
+<!-- 내정보창 시작 -->
+<div class="info-container">
+	<fieldset class="my-info">
+		<legend>내 정보</legend>
+		<div class="money">
+			소지한 돈 :
+			<!--/*[[${dfMoney}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+		</div>
+		<div class="level-container">
+			레벨 :
+			<!--/*[[${udto.level}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+			<div class="level">
+				<!--/*( [[${udto.exp}]]% )*/--> <!-- Thymeleaf 표현식 주석 -->
+			</div>
+		</div>
+		<div class="equipment">
+			착용중인 도구 :
+			<div class="equipment-name">
+				&nbsp;
+				<!--/*<span th:if="${udto.equipment} == null">없음</span>
+				<span th:if="${udto.equipment} != null" th:text="${udto.equipment}"></span>*/-->
+				<!-- Thymeleaf 표현식 주석 -->
+			</div>
+		</div>
+		<div class="stats">
+			<div class="strong">
+				힘 :
+				<div class="strong_num">
+					&nbsp;<!--/*[[${udto.str}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+				</div>
+			</div>
+			&nbsp;
+			<div class="dexterity">
+				민첩 :
+				<div class="strong_num">
+					&nbsp;<!--/*[[${udto.dex}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+				</div>
+			</div>
+		</div>
+		<div class="playtime">
+			<div class="time-text">플레이 시간 :</div>
+			<div class="current-time">
+				<!--/*[[${udto.playtime}]]*/--> <!-- Thymeleaf 표현식 주석 -->
+			</div>
+		</div>
+	</fieldset>
+</div>
+<!-- 위의 div 내정보창 끝 -->
+</div>
+<!-- 위의 div container 끝 -->
+
+<!-- middle-container 시작 -->
+<div class="middle-container">
+	<!-- 퀘스트 창 시작 -->
+	<div class="quest">
+		<fieldset class="quest-window">
+			<legend>퀘스트 01</legend>
+			<div class="quest-title">
+				<strong>비료 구매</strong>
+			</div>
+			<div class="quest-context">
+				비료를 구매하자
+				<br>*상점에서 구매한다.
+			</div>
+			<div class="quest-package">
+				<div class="quest-start">0</div>
+				<div class="quest-end">/5</div>
+			</div>
+		</fieldset>
+	</div>
+</div>
+<!-- 위의 div middle-container 끝 -->
+</body>
+</html>

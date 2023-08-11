@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" />
+	<!-- content script -->
+	<th:block th:replace="~{fragments/layouts/config::configFragment}"></th:block>
+</head>
+<body>
+	<th:block th:replace="~{fragments/layouts/header :: headerFragment}"></th:block>
+	<th:block layout:fragment="content"></th:block>
+	<th:block th:replace="~{fragments/layouts/footer :: footerFragment}"></th:block>
+할 것은 board_thymeleaf 와 여기에서 레이아웃 되는지 확인.
+</body>
+</html>
